@@ -1,6 +1,6 @@
 ## Flutter Tips: Connect Two PageView Widgets for Navigation
 
-For my  [game app](https://locadeserta.com/index_en.html)  I decided to have a custom PageView navigation with an independent scrolled navigation bar connected to the main scrollable content area. It looks like this:
+For my  [game app](https://locadeserta.com/index_en.html)  I decided to have a custom PageView navigation. It has an independent scrolled navigation bar connected to the main scrollable content area. It looks like this:
 
 ![page_view_navigation.gif](https://cdn.hashnode.com/res/hashnode/image/upload/v1579862811742/qkVqdwD_x.gif)
 
@@ -10,12 +10,12 @@ TLDR. You can try it online and check the source code here: https://dartpad.dev/
 
 The  [PageView](https://api.flutter.dev/flutter/widgets/PageView-class.html)  widgets can have multiple pages attached to it. It auto scrolls to them when user swipes left or right on the screen. More info about this widget can be found on official youtube channel: https://www.youtube.com/watch?v=J1gE9xvph-A&feature=emb_title
 
-As I usually do, before starting creating the layout of the widgets, I create the smallest possible Widget API which can satisfy my needs:
+Before starting creating the layout of the widgets, I usually create the smallest possible Widget API which can satisfy my needs:
 
-- Have arrow buttons to go left/right
-- Main Content can be any widget
-- Title Navigation view can be any widget
-- Amount of title and main content widgets must be identical
+- Buttons to go left/right
+- Main Content views can be any widgets
+- Navigation views can be any widgets
+- List size of navigation and main content widgets must be identical
 
 This can be achieved by having only two collections as the input properties for the new Widget:
 
@@ -37,7 +37,7 @@ This is an absolute minimum I would like to provide the new widget in order to g
 
 Now let's implement layout of the LinkedPageViews widget.
 
-The root widget of it will be Column, as the navigation bar and main content are located one under the other:
+The root widget of it will be  [Column](https://api.flutter.dev/flutter/widgets/Column-class.html) , as the navigation bar and main content are located one under the other:
 
 ```dart
 Column(
@@ -51,7 +51,7 @@ Column(
 
 # Main Content PageView
 
-We use PageView.builder in order to create a scrollable and swipable main content area and pass there our widgets:
+We use PageView.builder to create a scrollable and swipable main content area and pass there our widgets:
 
 ```
  Expanded(
@@ -67,13 +67,13 @@ We use PageView.builder in order to create a scrollable and swipable main conten
         )
 ```
 
-Expanded with flex property is used to tell how much of available screen should be taken by the child. As this is the main content area, we give it 9 (1  will be given to navigation area). So it will occupy 90% of available space.
+ [Expanded](https://api.flutter.dev/flutter/widgets/Expanded-class.html)  with flex property is used to tell how much of available screen should be taken by the child. As this is the main content area, we give it 9 (1  will be given to navigation area). So, it will occupy 90% of available space.
 
 # Navigation Content PageView
 
 The title navigation is also a PageView but with disabled scroll (more on this later).
 
-The render has couple of  [collection ifs](https://medium.com/dartlang/announcing-dart-2-3-optimized-for-building-user-interfaces-e84919ca1dff) : we have to avoid rendering go to navigation buttons at first and last positions, as we cannot go to -1 or length + 1 widget. It would raise a runtime exception.
+The render has couple of  [collection ifs](https://medium.com/dartlang/announcing-dart-2-3-optimized-for-building-user-interfaces-e84919ca1dff) : we have to avoid rendering 'go to' navigation buttons at first and last positions, as we cannot go to -1 or length + 1 widget. It would raise a runtime exception.
 
 ```dart
 Expanded(
@@ -120,7 +120,7 @@ Expanded(
         ),
 ```
 
-_goToPage method is pretty simple. The code calls the same methods of both PageViewControllers to navigate to specific page:
+_goToPage method is pretty simple. The code calls the same methods of both PageViewControllers to navigate to the specific page:
 
 ```dart
   _goToPage(int page) {
@@ -152,7 +152,7 @@ The scrolling of the navigation PageView is disabled in order to avoid infinite 
 physics: NeverScrollableScrollPhysics(),
 ```
 
-In order to kick of controller listeners we override initState method and setup our controllers:
+To kick of controller listeners we override initState method and setup our controllers:
 
 ```dart
 @override
@@ -189,7 +189,7 @@ The full app is available for iOS, Android and Web: https://locadeserta.com/inde
 
 # Homework
 
-Add a new feature to the LinkedPageViews widget: left and right arrow buttons can be any widget, they have to be provided to the LinkedPageViews constructor. The navigation when user presses on them must still work!
+Add a new feature to the LinkedPageViews widget: left and right arrow buttons can be any widget, they have to be provided to the LinkedPageViews constructor. The navigation must still work when user presses on them!
 
 ```dart
 LinkedPageViews(
@@ -207,6 +207,6 @@ LinkedPageViews(
 
 ## Hint
 
-You can check my other article where I implemented my own Scaffold widget in order to add expandable menu with a custom actions:
+You can check my other article, where I implemented my own Scaffold widget in order to add expandable menu with custom actions:
 
 https://www.gladimdim.org/flutter-creating-custom-scaffold-with-app-bar-ck5i9mtz703jgqps1qlf2tq27 . Check the AppBarObject implementation and usage.
