@@ -459,3 +459,5 @@ Function postExecute(Sloboda city) {
 ```
 
 # То ж, грайте в Слободу https://locadeserta.com/ та читайте інтерактивні історії!
+
+Збірки під десктоп платформи та андроід: https://github.com/gladimdim/locadeserta/releases
