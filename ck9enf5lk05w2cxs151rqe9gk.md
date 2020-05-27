@@ -86,30 +86,29 @@ Add couple methods to the class.
 
 - Checks the randomness and conditions whether the event can be triggered.
 
-    bool canHappen(Sloboda city) {
-      bool canHappen =
-          Random().nextInt(100) < probability && satisfiesConditions(city);
-      debugPrint(
-          'Event: $localizedKey satisfies: ${satisfiesConditions(city)}, will happen: $canHappen');
-      return canHappen;
-    }
+        bool canHappen(Sloboda city) {
+          bool canHappen =
+              Random().nextInt(100) < probability && satisfiesConditions(city);
+          debugPrint(
+              'Event: $localizedKey satisfies: ${satisfiesConditions(city)}, will happen: $canHappen');
+          return canHappen;
+        }
 
 - Execute event if everything was satisfied
 
-
-    Function execute(Sloboda city) {
-      var r = Random().nextInt(100);
-      return () {
-        bool success = r <= successRate;
-        return EventMessage(
-            event: this,
-            stock: success ? stockSuccess : stockFailure,
-            cityProps: success ? cityPropsSuccess : cityPropsFailure,
-            imagePath: success ? successIconPath : failureIconPath,
-            messageKey:
-                success ? this.successMessageKey : this.failureMessageKey);
-      };
-    }
+        Function execute(Sloboda city) {
+          var r = Random().nextInt(100);
+          return () {
+            bool success = r <= successRate;
+            return EventMessage(
+                event: this,
+                stock: success ? stockSuccess : stockFailure,
+                cityProps: success ? cityPropsSuccess : cityPropsFailure,
+                imagePath: success ? successIconPath : failureIconPath,
+                messageKey:
+                    success ? this.successMessageKey : this.failureMessageKey);
+          };
+        }
 
 
 Function execute returns another function. This will be described later :)
@@ -117,7 +116,6 @@ Function execute returns another function. This will be described later :)
 With a help of just three methods and dozens of class properties we completely implemented Random Event without choice.
 
 Example of how this abstract class can be used to create real instances.
-
 
     class SaranaInvasion extends RandomTurnEvent {
       String localizedKey = 'randomTurnEvent.saranaInvasion';
@@ -216,18 +214,19 @@ This method is called directly by the Flutter Widget when the user selects optio
 **Sloboda** class contains all event handlers, resource and property management API.
 
 - Player's decision handler
-    void runChoicableEventResult(ChoicableRandomTurnEvent event) {
-      Function f = event.makeChoice(true, this);
-      _nextRandomEvents.add(f);
-    }
+
+        void runChoicableEventResult(ChoicableRandomTurnEvent event) {
+          Function f = event.makeChoice(true, this);
+          _nextRandomEvents.add(f);
+        }
 
 - When the next game turn is performed, then the saved functions are executed at the beginning:
 
-    void _runAttachedEvents() {
-       for (var _event in _nextRandomEvents) {
-        EventMessage event = _event(); // result of the Event
-        this.stock + event.stock;
-        this.addProps(event.cityProps);
+        void _runAttachedEvents() {
+           for (var _event in _nextRandomEvents) {
+            EventMessage event = _event(); // result of the Event
+            this.stock + event.stock;
+            this.addProps(event.cityProps);
 
 
 ## Example of an Event with Choice
@@ -400,41 +399,41 @@ And the main thing. From **Flutter** Widget point of view it does not matter wha
 
     // Somewhere above is Column :)
      ..._events[key].reversed.map((event) {
-                            var textStyle;
-                            if (city.currentSeason.isNextTo(event.season)) {
-                              textStyle = Theme.of(context).textTheme.headline6;
-                            }
-                            return Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: SoftContainer(
-                                  child: Column(
-                                   children: <Widget>[
-                                      if (event.sourceEvent.imagePath != null)
-                                        Image.asset(
-                                          event.sourceEvent.imagePath,
-                                          width: 64,
-                                        ),
-                                      FullWidth(
-                                        child: Text(
-                                          SlobodaLocalizations.getForKey(
-                                              event.sourceEvent.messageKey),
-                                          textAlign: TextAlign.center,
-                                          style: textStyle,
-                                        ),
-                                      ),
-                                      if (event.sourceEvent.stock != null)
-                                        StockMiniView(
-                                          stock: event.sourceEvent.stock,
-                                          stockSimulation: null,
-                                        ),
-                                      if (event.sourceEvent.cityProps != null)
-                                        CityPropsMiniView(
-                                          props: event.sourceEvent.cityProps,
-                                        ),
-                                    ],
-                                  ),
-                                ));
-                          }).toList()
+            var textStyle;
+            if (city.currentSeason.isNextTo(event.season)) {
+              textStyle = Theme.of(context).textTheme.headline6;
+            }
+            return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SoftContainer(
+                  child: Column(
+                   children: <Widget>[
+                      if (event.sourceEvent.imagePath != null)
+                        Image.asset(
+                          event.sourceEvent.imagePath,
+                          width: 64,
+                        ),
+                      FullWidth(
+                        child: Text(
+                          SlobodaLocalizations.getForKey(
+                              event.sourceEvent.messageKey),
+                          textAlign: TextAlign.center,
+                          style: textStyle,
+                        ),
+                      ),
+                      if (event.sourceEvent.stock != null)
+                        StockMiniView(
+                          stock: event.sourceEvent.stock,
+                          stockSimulation: null,
+                        ),
+                      if (event.sourceEvent.cityProps != null)
+                        CityPropsMiniView(
+                          props: event.sourceEvent.cityProps,
+                        ),
+                    ],
+                  ),
+                ));
+          }).toList()
 
 # So, play it online at https://locadeserta.com/sloboda or read my interactive stories: https://locadeserta.com
 
