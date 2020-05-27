@@ -119,14 +119,14 @@ pub.dev дуже зручний у користуванні, адже одраз
 Метод build занінюємо на:
 
 ```
- Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: GameView(),
-    );
-  }
+   Widget build(BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: GameView(),
+      );
+    }
 ```
 Dart, це вам не JavaScript, тому одразу сповістить вас, що він не знає, що таке GameView().
 
@@ -170,50 +170,50 @@ Flutter має надзвичайно гарні плагіни, тому це �
 Виберіть Wrap with Widget  і введіть FutureBuilder, додавши необхідні параметри для його конструктора:
 
 ```
-return FutureBuilder(
-      future: _fetchData(),
-      builder: (context, snapshot) => Container(
-        child: Text('Ми тут!'),
-      ),
-    );
+    return FutureBuilder(
+        future: _fetchData(),
+        builder: (context, snapshot) => Container(
+          child: Text('Ми тут!'),
+        ),
+      );
 ```
 
 І тепер маємо додати метод _fetchData, який буде завантажувати дані із інтернету.
 
-```
-import 'package:flutter/material.dart';
-import 'package:async/async.dart';
-import 'package:gladstoriesengine/gladstoriesengine.dart';
-import 'package:http/http.dart' as http;
 
-class GameView extends StatefulWidget {
-  @override
-  _GameViewState createState() => _GameViewState();
-}
+    import 'package:flutter/material.dart';
+    import 'package:async/async.dart';
+    import 'package:gladstoriesengine/gladstoriesengine.dart';
+    import 'package:http/http.dart' as http;
 
-class _GameViewState extends State<GameView> {
-  final AsyncMemoizer _storyGet = AsyncMemoizer();
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: _fetchData(),
-      builder: (context, snapshot) => Container(
-        child: Text('Ми тут!'),
-      ),
-    );
-  }
+    class GameView extends StatefulWidget {
+      @override
+      _GameViewState createState() => _GameViewState();
+    }
 
-  Future _fetchData() async {
-    return _storyGet.runOnce(() async {
-      var result = await http
-          .get('https://locadeserta.com/stories/published/krivava_pastka.json');
+    class _GameViewState extends State<GameView> {
+      final AsyncMemoizer _storyGet = AsyncMemoizer();
+      @override
+      Widget build(BuildContext context) {
+        return FutureBuilder(
+          future: _fetchData(),
+          builder: (context, snapshot) => Container(
+            child: Text('Ми тут!'),
+          ),
+        );
+      }
 
-      return result;
-    });
-  }
-}
+      Future _fetchData() async {
+        return _storyGet.runOnce(() async {
+          var result = await http
+              .get('https://locadeserta.com/stories/published/krivava_pastka.json');
 
-```
+          return result;
+        });
+      }
+    }
+
+
 
 Забігаючи наперед скажу, що тут треба використовувати AsyncMemoizer. Бо без нього цей віджет буде викачувати дані при кожному rebuild події в програмі. Так як нам треба викачати json всього один раз, ми запам'ятовуємо результат виконання асинхронної операції, і вона буде виконана лише раз (перший).
 
@@ -221,8 +221,8 @@ class _GameViewState extends State<GameView> {
 
 Змінюємо builder:
 
-```
-builder: (BuildContext context, snapshot) {
+
+    builder: (BuildContext context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
           case ConnectionState.active:
@@ -235,7 +235,7 @@ builder: (BuildContext context, snapshot) {
         }
         return null;
       },
-```
+
 
 Ми оброблюємо стан виконання Future. Якщо він не завершений, то показуємо круглий прогрес бар. Якщо закінчили, то завантажуємо JSON в Story.fromJson для парсингу і обробки.
 
@@ -249,26 +249,26 @@ builder: (BuildContext context, snapshot) {
 
 StoryView на вхід отримує екземпляр класу Story. Цей клас містить всі необхідні методи для роботи з інтерактивною історією: програвання абзаців, задавання питань, отримання відповідей на питання. Це все не входить в рамки нашого проекту, тому ВЖУХ і віджет готовий:
 
-```
-  Widget build(BuildContext context) {
-    return StreamBuilder<List<HistoryItem>>(
-      stream: widget.story.historyChanges,
-      initialData: widget.story.history,
-      builder: (context, snapshot) {
-        var history = snapshot.data;
-        return Column(
-          children: [
-            _buildTextSection(history, context),
-            if (widget.story.canContinue()) createContinue(context),
-            if (!widget.story.canContinue())
-              ...createOptionList(widget.story.currentPage.next),
-          ],
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-        );
-      },
-    );
-  }
-```
+
+    Widget build(BuildContext context) {
+      return StreamBuilder<List<HistoryItem>>(
+        stream: widget.story.historyChanges,
+        initialData: widget.story.history,
+        builder: (context, snapshot) {
+          var history = snapshot.data;
+          return Column(
+            children: [
+              _buildTextSection(history, context),
+              if (widget.story.canContinue()) createContinue(context),
+              if (!widget.story.canContinue())
+                ...createOptionList(widget.story.currentPage.next),
+            ],
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+          );
+        },
+      );
+    }
+
 
 ![Screen Shot 2020-01-18 at 22.59.21.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1579381177220/VQNGW-sTP.png)
 
