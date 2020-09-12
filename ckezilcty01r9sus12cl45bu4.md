@@ -8,7 +8,7 @@ In [Previous Part 2](https://www.gladimdim.org/generation-and-render-of-2d-map-w
 
 The map with several lakes looks like this:
 
-![Screenshot_1599904050.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1599904085755/34XPBa088.png)
+![Screenshot_1599919786.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1599919815217/AL-ssNmXg.png)
 
 # Implementation
 
@@ -70,33 +70,44 @@ In try catch we use a side effect in **tileAtPoint** method: it will raise out o
 ### Create LakeMapTile class to represent cell with lake
 
 ```
-class LakeMapTile extends MapTile {
-  final int x;
-  final int y;
-  MAP_TILE_TYPES type = MAP_TILE_TYPES.LAKE;
+Widget toWidgetTile(BuildContext context) {
+    var rotate = 0;
+    if (inDirection == DIRECTION_TYPES.UP &&
+        outDirection == DIRECTION_TYPES.RIGHT) {
+      rotate = 0;
+    }
 
-  String toString() {
-    return " L";
-  }
+    if (inDirection == DIRECTION_TYPES.LEFT &&
+        outDirection == DIRECTION_TYPES.DOWN) {
+      rotate = 1;
+    }
 
-  LakeMapTile({this.x, this.y}) : super(x: x, y: y);
+    if (inDirection == DIRECTION_TYPES.UP &&
+        outDirection == DIRECTION_TYPES.LEFT) {
+      rotate = 2;
+    }
 
-  Widget toWidgetTile() {
-    return Image.asset(
-      "images/background/map/lake_tile.png",
-      fit: BoxFit.fitWidth,
+    if (inDirection == DIRECTION_TYPES.RIGHT &&
+        outDirection == DIRECTION_TYPES.UP) {
+      rotate = 3;
+    }
+    return RotatedBox(
+      quarterTurns: rotate,
+      child: Image.asset(
+        "images/background/map/lake_tile.png",
+        fit: BoxFit.fitWidth,
+      ),
     );
   }
-}
 ```
 
 A tile knows how to render itself for debugging purposes (**toString**) and how to render in Flutter widget (**toWidgetTile**).
 
 ### Add one lake
 
-We add **addLake** method. It takes 10 tries in order to find a spot for the lake. Then populates all four tiles with **LakeMapTile** instance.
+We add **addLake** method. It takes 10 tries in order to find a spot for the lake. Then populates all four tiles with **LakeMapTile** instance. Each lake tile get in/out direction set in order to correctly rotate the lake sprite to make it look like the lake occupies the whole 2x2 grid. The rotation starts from 0x0 point and goes clockwise to the 1x0
 
-```    
+``` 
 void addLake() {
     var tries = 10;
     while (tries-- > 0) {
@@ -104,17 +115,26 @@ void addLake() {
       if (!isRectangleFree(point, Point(point.x + 1, point.y + 1))) {
         continue;
       }
-      var lake1 = LakeMapTile(x: point.x, y: point.y);
+      var lake1 = LakeMapTile(x: point.x, y: point.y)
+        ..inDirection = DIRECTION_TYPES.UP
+        ..outDirection = DIRECTION_TYPES.RIGHT;
       setTile(lake1);
-      var lake2 = LakeMapTile(x: point.x + 1, y: point.y);
+      var lake2 = LakeMapTile(x: point.x + 1, y: point.y)
+        ..inDirection = DIRECTION_TYPES.LEFT
+        ..outDirection = DIRECTION_TYPES.DOWN;
       setTile(lake2);
-      var lake3 = LakeMapTile(x: point.x + 1, y: point.y + 1);
+      var lake3 = LakeMapTile(x: point.x + 1, y: point.y + 1)
+        ..inDirection = DIRECTION_TYPES.UP
+        ..outDirection = DIRECTION_TYPES.LEFT;
       setTile(lake3);
-      var lake4 = LakeMapTile(x: point.x, y: point.y + 1);
+      var lake4 = LakeMapTile(x: point.x, y: point.y + 1)
+        ..inDirection = DIRECTION_TYPES.RIGHT
+        ..outDirection = DIRECTION_TYPES.UP;
       setTile(lake4);
       break;
     }
   }
+
 ```
 
 ### Add unit tests
@@ -172,5 +192,4 @@ Debugging the generated Map 20x20 is quite cumbersome and we need to make sure t
 # Final result
 Map generated with Forest, River and Lakes looks like this:
 
-![Screenshot_1599904830.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1599904859511/fktI0foJa.png)
-
+![Screenshot_1599920003.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1599920028967/K71oinNDa.png)
