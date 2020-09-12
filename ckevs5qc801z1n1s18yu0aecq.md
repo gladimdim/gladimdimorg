@@ -4,7 +4,7 @@
 
 In this article I will show you how you can use **OOP **and **LinkedList **to generate 2D Map with terrain details in Dart and Flutter.
 
-The map feature is intended to be included in my city building game  [Loca Deserta: Sloboda](https://www.locadeserta.com/sloboda).
+The map feature is intended to be included in my city building game  [Loca Deserta: Sloboda](https://locadeserta.com/sloboda).
 
 In part 1 we will implement map generation logic with two terrain types: Grass and River.
 
