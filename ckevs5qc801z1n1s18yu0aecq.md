@@ -461,11 +461,11 @@ GrassMapTile defines toWidgetTile method like this:
 
 Rendering river is more sophisticated. We need to pay attention to **in** and **out** direction properties of each **RiverMapTile**.
 
-To render river that flows from Up to Bottom is simple: we just add a ImageAsset widget with appropriate image.
+To render river that flows from Up to Bottom is simple: we just add a  [Image.asset](https://api.flutter.dev/flutter/widgets/Image/Image.asset.html) widget with appropriate image.
 
 But how to render river that flows from left to right? Easy! Just rotate the up-to-bottom image sprite by 90 degrees.
 
-There is special widget called **RotatedBox** for just making it possible.
+There is special widget calle [RotatedBox](https://api.flutter.dev/flutter/widgets/RotatedBox-class.html) for just making it possible.
 
 The same trick is done for river angles. We have only one sprite for angled river. All other sprites reuse the same image but with different **RotatedBox** rotations.
 
