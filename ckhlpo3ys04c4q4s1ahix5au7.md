@@ -17,7 +17,7 @@
 
  [Збірка для Android APK](https://github.com/gladimdim/locadeserta/releases/download/2.9.0-sloboda/sloboda_2.9.0.apk) 
 
- [Windows 10 збірка](https://github.com/gladimdim/locadeserta/releases/download/2.9.0-sloboda/sloboda_windows_290.zip) 
+ [Windows 10 збірка](https://github.com/gladimdim/locadeserta/releases/download/2.9.0-sloboda/sloboda_290.zip) 
 
 # Нововедення в ігролад
 
