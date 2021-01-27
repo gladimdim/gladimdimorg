@@ -14,7 +14,7 @@
 
 Ви також можете скачати APK та Windows збірки напряму з github:
 
- [Реліз 3.0.5 на Github](https://github.com/gladimdim/locadeserta/releases/tag/3.0.5-sloboda) 
+ [Реліз 3.0.5 на Github](https://github.com/gladimdim/locadeserta/releases/tag/3.0.5) 
 
  [Збірка для Android APK](https://github.com/gladimdim/locadeserta/releases/download/3.0.5/sloboda_305.apk) 
 
