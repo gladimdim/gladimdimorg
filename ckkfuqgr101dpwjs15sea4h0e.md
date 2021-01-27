@@ -6,11 +6,15 @@
 Збалансовано епічні події.
 Всі сповіщеня в середині гри показують результат зміни інвентарю.
 
+Відео версія: [https://www.youtube.com/watch?v=XpoF1Ybfrug](https://www.youtube.com/watch?v=XpoF1Ybfrug)
+
 # Де взяти гру?
 
 Гра доступна онлайн:  [https://locadeserta.com/sloboda/](https://locadeserta.com/sloboda/), але будьте уважні - тут викладаються розробницькі збірки.
 
 Релізні випуски гри доступні на Google Play Store:  [Дике Поле: Слобода](https://play.google.com/store/apps/details?id=com.gladimdim.sloboda) 
+
+Та на App Store: [Дике Поле: Слобода](https://apps.apple.com/ua/app/sloboda/id1543669328?l=uk)
 
 Ви також можете скачати APK та Windows збірки напряму з github:
 
