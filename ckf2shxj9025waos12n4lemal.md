@@ -2,7 +2,7 @@
 
 # Introduction
 
- [In previous post](https://www.gladimdim.org/generation-and-render-of-2d-map-with-terrain-in-dart-flutter-adding-lakes-part-3-ckezilcty01r9sus12cl45bu4) we finished all the logic related to generation of the map. To be able to apply this feature in  [real game](https://locadeserta.com/sloboda) we need to save and restore the generated map. If we do not do this then each time player starts the game a new map will be generated.
+ [In previous post](https://gladimdim.org/generation-and-render-of-2d-map-with-terrain-in-dart-flutter-adding-lakes-part-3-ckezilcty01r9sus12cl45bu4) we finished all the logic related to generation of the map. To be able to apply this feature in  [real game](https://locadeserta.com/sloboda) we need to save and restore the generated map. If we do not do this then each time player starts the game a new map will be generated.
 
 # Requirements
 
