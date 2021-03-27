@@ -24,7 +24,7 @@ The in-game notifications must:
 
 # Implementation
 
-My game state approach already includes different actions that can happen in game. In my previous article [Adding sound to game](https://www.gladimdim.org/adding-sound-to-flutter-game-ckfdumon1000d65s1351k8euz) we used them to play different sounds based on the event type.
+My game state approach already includes different actions that can happen in game. In my previous article [Adding sound to game](https://gladimdim.org/adding-sound-to-flutter-game-ckfdumon1000d65s1351k8euz) we used them to play different sounds based on the event type.
 
 We can reuse the same approach and implement notifications!
 
