@@ -2,7 +2,7 @@
 
 # Introduction 
 
-In [Previous Part 2](https://www.gladimdim.org/generation-and-render-of-2d-map-with-terrain-in-dart-flutter-adding-forest-spots-part-2-ckezep5c401fztrs1g2x5gibk) we added generation for Forests. In this post we will add Lakes.
+In [Previous Part 2](https://gladimdim.org/generation-and-render-of-2d-map-with-terrain-in-dart-flutter-adding-forest-spots-part-2-ckezep5c401fztrs1g2x5gibk) we added generation for Forests. In this post we will add Lakes.
 
 # Final result
 
