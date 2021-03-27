@@ -1,6 +1,6 @@
 ## Adding Sound to Flutter Game.
 
- [In previous post](https://www.gladimdim.org/generation-and-render-of-2d-map-with-terrain-in-dart-flutter-deserialization-of-generated-map-part-4-ckf2shxj9025waos12n4lemal)  we learnt how to (de)serialize the map state to and from JSON. Now let's see how can we add sound effects to the game.
+ [In previous post](https://gladimdim.org/generation-and-render-of-2d-map-with-terrain-in-dart-flutter-deserialization-of-generated-map-part-4-ckf2shxj9025waos12n4lemal)  we learnt how to (de)serialize the map state to and from JSON. Now let's see how can we add sound effects to the game.
 
 # Introduction
 
