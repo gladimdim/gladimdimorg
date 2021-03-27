@@ -1,7 +1,7 @@
 ## Generation and Render of 2D Map with Terrain in Dart + Flutter. Adding Forest Spots. Part 2
 
 # Introduction
-In  [Part 1](https://www.gladimdim.org/generation-and-render-of-2d-map-with-terrain-in-dart-flutter-part-1-ckevs5qc801z1n1s18yu0aecq) we created all needed methods to generate map with Grass and River. In this part we will add Forest spots to the map. A lot of code is reused from Part 1 but it is gradually enhanced step-by-step.
+In  [Part 1](https://gladimdim.org/generation-and-render-of-2d-map-with-terrain-in-dart-flutter-part-1-ckevs5qc801z1n1s18yu0aecq) we created all needed methods to generate map with Grass and River. In this part we will add Forest spots to the map. A lot of code is reused from Part 1 but it is gradually enhanced step-by-step.
 
 # Final Result
 
