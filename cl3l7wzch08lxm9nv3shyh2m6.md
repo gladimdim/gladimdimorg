@@ -1,4 +1,4 @@
-## # The Magic of Start/Update Events in Unity's MonoBehaviour
+## The Magic of Start/Update Events in Unity's MonoBehaviour
 
 # The Magic of Start/Update Events in MonoBehaviour
 
