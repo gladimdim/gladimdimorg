@@ -1,6 +1,6 @@
 # Loca Deserta: Sloboda 2 Release!
 
-We are glad to announce that our game Loca Deserta: Sloboda 2 is available on App Store!
+We are glad to announce that our game Loca Deserta: Sloboda 2 is available on the App Store and Google Play Store!
 
 Download it now at the App Store: [https://apps.apple.com/us/app/loca-deserta-sloboda-2/id1642505646](https://apps.apple.com/us/app/loca-deserta-sloboda-2/id1642505646)
 
