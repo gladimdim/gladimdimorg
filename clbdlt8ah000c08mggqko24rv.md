@@ -1,10 +1,10 @@
 # Дике Поле: Слобода 2. Доступна на Apple!
 
-Розбудуй козацьке селище!
+Ми раді виходу нашої гри "Дике Поле: Слобода 2" на платформі Apple App Store та Google Play Store!
 
-Ми раді виходу нашої гри "Дике Поле: Слобода 2" на платформі Apple App Store!
+Купити можна на iOS по посиланню: [https://apps.apple.com/ua/app/loca-deserta-sloboda-2/id1642505646](https://apps.apple.com/ua/app/loca-deserta-sloboda-2/id1642505646)
 
-Купити можна по посиланню: [https://apps.apple.com/ua/app/loca-deserta-sloboda-2/id1642505646](https://apps.apple.com/ua/app/loca-deserta-sloboda-2/id1642505646)
+Або для Android: [https://play.google.com/store/apps/details?id=com.dmytrogladkyi.Sloboda](https://play.google.com/store/apps/details?id=com.dmytrogladkyi.Sloboda)
 
 Перегляньте релізний трейлер:
 
