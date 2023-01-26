@@ -8,7 +8,7 @@ This update is free for anyone who already purchased our game.
 
 If you want to purchase it, then pick your platforms:
 
-Apple App Store: [https://apps.apple.com/ua/app/loca-deserta-sloboda-2/id1642505646](https://apps.apple.com/ua/app/loca-deserta-sloboda-2/id1642505646)
+Apple App Store: [https://apps.apple.com/us/app/loca-deserta-sloboda-2/id1642505646](https://apps.apple.com/us/app/loca-deserta-sloboda-2/id1642505646)
 
 And Google Play Store: [https://play.google.com/store/apps/details?id=com.dmytrogladkyi.Sloboda](https://play.google.com/store/apps/details?id=com.dmytrogladkyi.Sloboda)
 
