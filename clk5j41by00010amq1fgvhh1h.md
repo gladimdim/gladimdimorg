@@ -12,7 +12,11 @@ We are happy to announce that we have published our 6th game in the [Loca Desert
 
 Google Play: [**Loca Deserta: Odesa - Apps on Google Play**](https://play.google.com/store/apps/details?id=com.dmytrogladkyi.SlobodaOdesa)
 
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689525911263/4cf86643-e9ea-4e1f-910f-8dc8f8024093.png align="center")](https://play.google.com/store/apps/details?id=com.dmytrogladkyi.SlobodaOdesa)
+
 Apple App Store: [**Loca Deserta: Odesa on the App Store (apple.com)**](https://apps.apple.com/us/app/loca-deserta-odesa/id6449617200)
+
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689525886020/3e9438e2-f67b-4f1e-a6bd-2b902e5f8631.png align="center")](https://apps.apple.com/us/app/loca-deserta-odesa/id6449617200)
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689408902095/4dc9b7ee-7af0-4e76-b35e-b669bade8674.png align="center")
 
