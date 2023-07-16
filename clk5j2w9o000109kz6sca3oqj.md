@@ -14,7 +14,11 @@ tags: gamedev, unity-engine, locadesertasloboda
 
 Google Play: [Loca Deserta: Odesa - Apps on Google Play](https://play.google.com/store/apps/details?id=com.dmytrogladkyi.SlobodaOdesa)
 
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689525791736/19d9e65c-96ee-4e12-910a-5378d34adbb6.png align="center")](https://play.google.com/store/apps/details?id=com.dmytrogladkyi.SlobodaOdesa)
+
 Apple App Store: [Loca Deserta: Odesa on the App Store (](https://apps.apple.com/ua/app/loca-deserta-odesa/id6449617200)[apple.com](http://apple.com)[)](https://apps.apple.com/ua/app/loca-deserta-odesa/id6449617200)
+
+[![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689525616601/6a666c3c-88d8-46c5-ad21-e9c5dcf1f986.png align="center")](https://apps.apple.com/ua/app/loca-deserta-odesa/id6449617200)
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689408902095/4dc9b7ee-7af0-4e76-b35e-b669bade8674.png align="center")
 
